@@ -1,20 +1,23 @@
 {
+  "include": [
+    "src",
+    "types",
+    "playwright"
+  ],
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
+    "types": [
+      "mocha"
+    ],
+    "module": "commonjs",
+    "target": "ES2018",
     "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
 }
