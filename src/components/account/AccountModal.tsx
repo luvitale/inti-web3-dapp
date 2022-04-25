@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useEthers, getExplorerAddressLink, useEtherBalance } from '@usedapp/core'
+import { useEthers, useEtherBalance } from '@usedapp/core'
 import { TransactionsList } from '../Transactions/History'
 import { formatEther } from '@ethersproject/units'
 import { BigNumber } from 'ethers'
@@ -8,6 +8,10 @@ import { Colors, Shadows, Transitions } from '../../global/styles'
 import { ShareIcon } from '../Transactions/Icons'
 import { motion } from 'framer-motion'
 import { Link } from '../base/Link'
+
+import { getChainById } from '../../custom-chains'
+
+import { getChain } from '@inti-ar/evm-chains'
 
 const formatter = new Intl.NumberFormat('en-us', {
   minimumFractionDigits: 4,
@@ -41,8 +45,8 @@ export const AccountModal = ({ setShowModal }: AccountModalProps) => {
           <AccountInfo>
             <AccountAddress>Address: {account}</AccountAddress>
             <LinkWrapper>
-              <Link href={getExplorerAddressLink(account, chainId)} target="_blank" rel="noopener noreferrer">
-                Show on etherscan
+              <Link href={getChainById(chainId)?.getExplorerAddressLink(account)} target="_blank" rel="noopener noreferrer">
+                Show on explorer
                 <LinkIconWrapper>
                   <ShareIcon />
                 </LinkIconWrapper>
@@ -51,7 +55,7 @@ export const AccountModal = ({ setShowModal }: AccountModalProps) => {
                 <Link onClick={() => console.log(navigator.clipboard.writeText(account))}>Copy to clipboard</Link>
               )}
             </LinkWrapper>
-            <BalanceWrapper>ETH: {balance && formatBalance(balance)}</BalanceWrapper>
+            <BalanceWrapper>{getChain(chainId).chain}: {balance && formatBalance(balance)}</BalanceWrapper>
           </AccountInfo>
           <HistoryWrapper>
             <TransactionsList />

@@ -8,8 +8,10 @@ import Web3Modal from 'web3modal'
 import { AccountModal } from './AccountModal'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 
+import { BFA, BFA_TEST } from '../../custom-chains'
+
 export const Web3ModalButton = () => {
-  const { account, activate, deactivate } = useEthers()
+  const { account, activate, deactivate, chainId } = useEthers()
   const ens = useLookupAddress()
   const [showModal, setShowModal] = useState(false)
   const [activateError, setActivateError] = useState('')
@@ -52,7 +54,7 @@ export const Web3ModalButton = () => {
 
   return (
     <Account>
-      <ErrorWrapper>{activateError}</ErrorWrapper>
+      {chainId != BFA.chainId && chainId != BFA_TEST.chainId && <ErrorWrapper>{activateError}</ErrorWrapper>}
       {showModal && <AccountModal setShowModal={setShowModal} />}
       {account ? (
         <>

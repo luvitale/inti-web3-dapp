@@ -6,7 +6,11 @@ import { Label } from '../typography/Label'
 import { TextInline } from '../typography/Text'
 import { Title } from '../typography/Title'
 
-import { AccountButton } from '../components/account/AccountButton'
+import { getChain } from '@inti-ar/evm-chains'
+
+import { Localhost } from '@usedapp/core'
+
+import { Web3ModalButton } from '../components/account/Web3ModalButton'
 
 const STAKING_CONTRACT = '0x00000000219ab540356cBB839Cbe05303d7705Fa'
 
@@ -21,13 +25,20 @@ export function Balance() {
         <Section>
           <SectionRow>
             <Title>Balance</Title>
-            <AccountButton />
+            <Web3ModalButton />
           </SectionRow>
           <ContentBlock>
             {stakingBalance && (
               <ContentRow>
                 <Label>ETH2 staking contract holds:</Label> <TextInline>{formatEther(stakingBalance)}</TextInline>{' '}
                 <Label>ETH</Label>
+              </ContentRow>
+            )}
+            {chainId && (
+              <ContentRow>
+                <Label>Chain:</Label> <TextInline>{
+                  chainId == Localhost.chainId ? Localhost.chainName : getChain(chainId).name
+                }</TextInline>
               </ContentRow>
             )}
             {account && (
