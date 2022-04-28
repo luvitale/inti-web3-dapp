@@ -745,7 +745,7 @@ class App extends React.Component<any, any> {
                 )}
               </>) : (
               <SLanding center>
-                <h3>{`Test Web3Modal`}</h3>
+                <h3>{`INTI Blockchain App`}</h3>
                 <ConnectButton onClick={this.onConnect} />
               </SLanding>
             )}

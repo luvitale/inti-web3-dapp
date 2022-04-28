@@ -26,7 +26,7 @@ const SBanner = styled.div`
 const Banner = () => (
   <SBannerWrapper>
     <SBanner />
-    <span>{`Web3Modal`}</span>
+    <span>{`INTI DApp`}</span>
   </SBannerWrapper>
 );
 
