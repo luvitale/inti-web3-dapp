@@ -2,7 +2,15 @@
 
 # Web3 DApp
 
-> ✨ Web3 application.
+> Web3 Application
+
+<img src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+ 
+forked from: [Web3Modal](https://github.com/Web3Modal/web3modal). 
+
+This repo can be cloned and run with no changes. for the live example see [Web3Modal Example](https://web3modal.com)
+
 
 # Usage
 
@@ -16,12 +24,12 @@ npm install
 npm start
 ```
 Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+Open http://localhost:3000 to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-## Builds
+## Build
 
 ```
 yarn build
@@ -31,20 +39,5 @@ or
 npm run build
 ```
 
-Builds a static copy of your site to the `build/` folder.
+Build a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.js` config file.
-
-## Testing
-
-```
-yarn test
-```
-or
-```
-npm test
-```
-
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
