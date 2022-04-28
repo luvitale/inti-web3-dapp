@@ -1,5 +1,6 @@
 {
-  "name": "web3-dapp",
+  "name": "inti-web3-dapp",
+  "description": "INTI Web3 DApp",
   "author": "Luciano Nahuel Vitale <lucianonahuelvitale@gmail.com>",
   "version": "1.0.0",
   "private": true,

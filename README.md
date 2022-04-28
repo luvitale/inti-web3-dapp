@@ -1,8 +1,8 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fluvitale%2Fweb3-dapp)
 
-# Web3 DApp
+# INTI Web3 DApp
 
-> Web3 Application
+> INTI Web3 Application
 
 <img src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
 <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
@@ -41,3 +41,11 @@ npm run build
 
 Build a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
+
+## Environment Variables
+
+```
+REACT_APP_INFURA_ID=
+REACT_APP_FORTMATIC_KEY=
+REACT_APP_BITSKI_CLIENT_ID=
+```
